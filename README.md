@@ -1,81 +1,101 @@
 # Krishna–Budameru Flood Mapping and Terrain Analysis
 
-A Google Earth Engine project for estimating flood inundation and
-analysing terrain, vegetation, and surface water in a rectangular
-study area around Vijayawada, Andhra Pradesh, India.
-
-## Project status
-
-Satellite-analysis outputs have been exported.
-Flood-map validation and final map preparation are pending.
-An operational early-warning system is not implemented.
+A satellite-based geospatial project for estimating flood inundation
+and analysing terrain, vegetation, and surface water around
+Vijayawada, Andhra Pradesh, using Google Earth Engine.
 
 ## Objectives
 
-- Estimate potential inundation using Sentinel-1 SAR change detection.
+- Estimate flood inundation using Sentinel-1 SAR imagery.
 - Analyse elevation and slope using SRTM DEM.
-- Calculate vegetation conditions using Sentinel-2 NDVI.
-- Calculate surface-water indicators using Sentinel-2 NDWI.
+- Calculate NDVI to examine vegetation conditions.
+- Calculate NDWI to identify potential surface-water areas.
+- Export analysis results for further mapping and validation.
 
-## Study area
+## Study Area
 
-The analysis uses a rectangular region of interest:
+The project uses a rectangular region of interest around Vijayawada:
 
 - Longitude: 80.52° E to 80.85° E
 - Latitude: 16.50° N to 16.85° N
 
-This rectangle is an analysis boundary, not a delineated
-Krishna or Budameru catchment boundary.
+This rectangle is the satellite-analysis boundary.
+It is not a delineated Krishna or Budameru catchment boundary.
 
-## Datasets
+## Data Used
 
-- Sentinel-1 GRD: COPERNICUS/S1_GRD
-- Sentinel-2 surface reflectance: COPERNICUS/S2_SR_HARMONIZED
-- SRTM DEM: USGS/SRTMGL1_003
+| Dataset | Purpose |
+|---------|---------|
+| Sentinel-1 GRD | SAR-based flood estimation |
+| Sentinel-2 Surface Reflectance | NDVI and NDWI analysis |
+| SRTM DEM | Elevation and slope analysis |
 
-Additional datasets and exact processing parameters are documented
-in the scripts and methodology.
+See the published scripts for exact dates, filters, thresholds,
+and any additional datasets used.
 
-## Scripts
+## Tools Used
+
+- Google Earth Engine
+- JavaScript
+
+## Methodology
+
+1. Define the study-area boundary.
+2. Select Sentinel-1 imagery before and during the flood period.
+3. Compare VV backscatter to identify potential inundation.
+4. Apply the water-exclusion method documented in the script.
+5. Generate elevation and slope layers from SRTM DEM.
+6. Calculate NDVI and NDWI using Sentinel-2 imagery.
+7. Export the results as GeoTIFF files.
+
+## Exported Outputs
+
+- Krishna_Budameru_DEM.tif
+- Krishna_Budameru_Flood_Extent_2024.tif
+- Krishna_Budameru_NDVI_FIXED_2024.tif
+- Krishna_Budameru_NDWI_2024.tif
+- Krishna_Budameru_NDWI_Water_Mask_2024.tif
+- Krishna_Budameru_Slope.tif
+
+## Code
+
+The working Google Earth Engine scripts will be stored in:
 
 - scripts/01_flood_terrain_water_analysis.js
 - scripts/02_ndvi_fixed.js
 
-## Outputs
+## How to Run
 
-- Estimated flood extent
-- Elevation
-- Slope
-- NDVI
-- NDWI
-- NDWI-based water mask
+1. Sign in to Google Earth Engine Code Editor.
+2. Copy a published JavaScript script into a new script.
+3. Review the study area and processing parameters.
+4. Run the script.
+5. Inspect the Console and map layers.
+6. Start the required exports from the Tasks panel.
+7. Download the exported files from Google Drive.
 
-## How to run
+## Project Status
 
-1. Open Google Earth Engine Code Editor.
-2. Copy one of the JavaScript scripts into a new file.
-3. Review the study area, dates, and processing parameters.
-4. Run the script and inspect the Console and map.
-5. Run the required export tasks from the Tasks panel.
-6. Repeat for the separate NDVI script.
+- Satellite-analysis outputs exported.
+- Final cartographic maps and independent validation pending.
+- Early-warning functionality is planned, not implemented.
 
 ## Limitations
 
-- SAR-derived inundation is an estimate, not ground truth.
-- Thresholds require validation.
-- Clouds can leave gaps in Sentinel-2 outputs.
-- Multi-date composites do not necessarily represent peak flooding.
-- NDVI and NDWI alone do not constitute a flood-risk assessment.
-- Forecasting and operational alerts are not implemented.
+- The flood layer represents estimated inundation, not ground truth.
+- Detection thresholds require independent validation.
+- Clouds can limit usable Sentinel-2 observations.
+- Multi-date composites may not represent peak flood conditions.
+- Flood mapping alone is not a complete flood-risk assessment.
 
-## Future work
+## Future Work
 
-- Validate estimated inundation against independent reference data.
-- Add population and infrastructure exposure analysis.
-- Add rainfall and water-level observations.
+- Validate flood extent using independent reference data.
+- Assess population and infrastructure exposure.
+- Integrate rainfall and water-level observations.
 - Develop and validate an early-warning prototype.
 
 ## Author
 
-Your Name
-M.Tech student, Andhra University
+Amulya k 
+M.Tech, Andhra University
