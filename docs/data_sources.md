@@ -1,3 +1,6 @@
+<img width="942" height="670" alt="NDWI" src="https://github.com/user-attachments/assets/73a747e3-ad58-4917-9306-73f23f0ddb52" />
+<img width="1001" height="705" alt="DEM modified" src="https://github.com/user-attachments/assets/20e6bcd5-a6ca-4d11-95fb-bfa3f2c33870" />
+<img width="1122" height="794" alt="SLOPE" src="https://github.com/user-attachments/assets/e29098de-b617-4b00-82ae-42593295ec12" />
 # Data Sources and Exported Outputs
 
 ## Earth Engine datasets
