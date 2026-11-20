@@ -57,4 +57,3 @@ The exported Google Earth Engine outputs are available here:
 | Large GeoTIFF files    | No                 | Yes               |
 | Full documentation PDF | Yes                | Yes               |
 | Raw exported outputs   | Optional           | Yes               |
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e722a0a6-79e8-4453-8367-f94cffa3177b" />
